@@ -33,10 +33,12 @@ static int line = 1;
 enum charClass{ UNKNOWN = 0, LETTER = 1, DIGIT = 2} ;
 
 //Create possible comparison operators
-static std::vector<string> comparisonOps = {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"};
+//static std::vector<string> comparisonOps {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"}; //I didn't want to use c++11 anyways
+static char* tempArray[] = {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"};
+static std::vector<string> comparisonOps(tempArray, tempArray+6);
 
 //Store error messages
-static std::vector<std::pair<int, string>>  errorMessages;
+static std::vector<std::pair<int, string> >  errorMessages;
 
 //Forward declare functions.
 void CodeAnalysis();
@@ -324,7 +326,7 @@ void Error(int errorCode, string errorMsg)
   if(errorCode == 1) //Syntactic error
   {
     //No duplicates, check for errors on the same line, which are typically errant
-    for(std::vector<std::pair<int, string>>::iterator index = errorMessages.begin(); index != errorMessages.end(); index++)
+    for(std::vector<std::pair<int, string> >::iterator index = errorMessages.begin(); index != errorMessages.end(); index++)
     {
       if(index->first == line)
         return;
@@ -345,7 +347,7 @@ void Error(int errorCode, string errorMsg)
 //Prints all errors caught in program to the screen
 void PrintErrors()
 {
-  for(std::vector<std::pair<int, string>>::iterator index = errorMessages.begin(); index != errorMessages.end(); index++)
+  for(std::vector<std::pair<int, string> >::iterator index = errorMessages.begin(); index != errorMessages.end(); index++)
   {
     cout << "ERROR on line: " << index->first << " | " << index->second << endl;
   }

@@ -2,7 +2,7 @@ firstvar := 17829;
 secondvar := 8732489;
 thirdvar := 0;
 read(thirdvar);
-while thirdvar >=> firstvar do
+while thirdvar >= firstvar do
 	newvar:=thirdvar * 4 / 2 + 1 - (43 + 21 / 2);
 	othervar := (newvar * 3) + 1;
 	thirdvar := firstvar + 1

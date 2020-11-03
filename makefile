@@ -8,7 +8,7 @@ EXECS=danc_analyzer
 CC=g++
 
 #Replace with the name of your C or C++ source code file.
-MYFILE=Ethan_Shook_11469438_Assignment3.cpp
+MYFILE=Ethan_Shook_11469438_Assignment4.cpp
 
 
 all: ${EXECS}
