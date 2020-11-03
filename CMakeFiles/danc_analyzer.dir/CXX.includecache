@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ethan/Documents/CS3361/Assignment4/Ethan_Shook_11469438_Assignment3.cpp
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+stdexcept
+-
+map
+-
+sstream
+-
+iterator
+-
+algorithm
+-
+

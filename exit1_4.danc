@@ -1,0 +1,30 @@
+firstvar := 17829;
+secondvar := 8732489;
+thirdvar := 0;
+read(thirdvar);
+while thirdvar >=> firstvar do
+	newvar:=thirdvar * 4 / 2 + 1 - (43 + 21 / 2);
+	othervar := (newvar * 3) + 1;
+	thirdvar := firstvar + 1
+od;
+
+while secondvar = firstvar do
+	while firstvar <> 0 do
+		secondvar := firstvar / thirdvar;
+		othervar := newvar - (12 + 3)
+	od
+od;
+
+while firstvar < secondvar do
+	while secondvar > firstvar do
+		while thirdvar = secondvar do
+			while secondvar <> firstvar do
+				while thirdvar <= secondvar do
+					while secondvar >= thirdvar do
+						write(firstvar)
+					od
+				od
+			od
+		od
+	od
+od
