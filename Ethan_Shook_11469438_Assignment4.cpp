@@ -64,7 +64,7 @@ void Error(int, string);
 
 int main(int argc, char* argv[])
 {
-  cout << "DanC Analyzer :: R11469438" << endl;
+  cout << "DanC Parser :: R11469438" << endl;
 
   if(argc < 2) //Check for a second argument
   {
