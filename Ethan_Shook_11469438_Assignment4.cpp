@@ -33,9 +33,9 @@ static int line = 1;
 enum charClass{ UNKNOWN = 0, LETTER = 1, DIGIT = 2} ;
 
 //Create possible comparison operators
-//static std::vector<string> comparisonOps {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"}; //I didn't want to use c++11 anyways
-static char* tempArray[] = {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"};
-static std::vector<string> comparisonOps(tempArray, tempArray+6);
+static std::vector<string> comparisonOps {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"}; //I didn't want to use c++11 anyways
+//static char* tempArray[] = {"LESSER_OP", "GREATER_OP", "EQUAL_OP", "NEQUAL_OP", "LEQUAL_OP", "GEQUAL_OP"};
+//static std::vector<string> comparisonOps(tempArray, tempArray+6);
 
 //Store error messages
 static std::vector<std::pair<int, string> >  errorMessages;
@@ -85,6 +85,8 @@ int main(int argc, char* argv[])
     PrintErrors();
     return 1;
   }
+  else
+    cout << "Syntax Validated" << endl;
 
   return 0; //If the code finished execution sucessfully, and there were no errors, return 0.
 }
@@ -322,6 +324,7 @@ void Factor()
 //Handles errors by code and message to cut down on error message lines, and clean interior of functions
 void Error(int errorCode, string errorMsg)
 {
+  errorMsg = "Error encounter: The next lexeme was " + lexeme + " and the next token was " + token;
   isValidCode = false;
   if(errorCode == 1) //Syntactic error
   {
@@ -349,7 +352,8 @@ void PrintErrors()
 {
   for(std::vector<std::pair<int, string> >::iterator index = errorMessages.begin(); index != errorMessages.end(); index++)
   {
-    cout << "ERROR on line: " << index->first << " | " << index->second << endl;
+    cout << index->second << endl;   
+// cout << "ERROR on line: " << index->first << " | " << index->second << endl;
   }
 }
 

@@ -2,7 +2,8 @@
 #Before running this file, run the command:   module load gnu
 
 
-EXECS=danc_analyzer
+EXECS=danc_parser
+
 
 #Replace the g++ with gcc if using C
 CC=g++
@@ -14,7 +15,7 @@ MYFILE=Ethan_Shook_11469438_Assignment4.cpp
 all: ${EXECS}
 
 ${EXECS}: ${MYFILE}
-	${CC} -o ${EXECS} ${MYFILE}
+	${CC} -std=c++11 -o ${EXECS} ${MYFILE}
 
 clean:
 	rm -f ${EXECS}
